@@ -17,8 +17,6 @@ function getRepositoryList(inputValue) {
     });
 }
 
-
-
 function displayResults(responseJson) {
   console.log(responseJson);
   for (let i = 0; i < responseJson.length; i++){
