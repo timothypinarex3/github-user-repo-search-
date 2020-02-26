@@ -3,7 +3,6 @@
 function getRepositoryList(inputValue) {
   let requiredUrl = 
   `https://api.github.com/users/${inputValue}/repos`;
-  //alert(requiredUrl);
     fetch(requiredUrl)
     .then(response => {
       if (response.ok) {
@@ -22,15 +21,12 @@ function getRepositoryList(inputValue) {
 
 function displayResults(responseJson) {
   console.log(responseJson);
-  //$('#results-list').empty();
   for (let i = 0; i < responseJson.length; i++){
-  
     $('#results-list').append(
       `<li><h3><a href="${responseJson[i].html_url}">${responseJson[i].name}</a></h3>
       <p>Description : ${responseJson[i].description}</p>   
       </li>`
     )};
-  //display the results section  
   $('#results').removeClass('hidden');
 };
 
